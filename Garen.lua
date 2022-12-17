@@ -4,13 +4,19 @@ local Game = Game
 local Obj_AI_Hero = Obj_AI_Hero
 local math = math
 local string = string
+
+-- Load DamageLib library
 local DamageLib = require "DamageLib"
 
 -- Calculate damage for each ability
-local Qdamage = DamageLib:GetSpellDamage(myHero, target, _Q)
-local Wdamage = DamageLib:GetSpellDamage(myHero, target, _W)
-local Edamage = DamageLib:GetSpellDamage(myHero, target, _E)
-local Rdamage = DamageLib:GetSpellDamage(myHero, target, _R)
+local Qdamage = DamageLib:getdmg("Q", target, myHero)
+local Wdamage = DamageLib:getdmg("W", target, myHero)
+local Edamage = DamageLib:getdmg("E", target, myHero)
+local Rdamage = DamageLib:getdmg("R", target, myHero)
+
+-- Calculate auto attack damage
+local AAdamage = DamageLib:GetAADamage(myHero, target)
+
 
 -- Define Garen as the champion
 local myHero = _G.myHero
