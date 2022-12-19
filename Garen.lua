@@ -1,10 +1,3 @@
--- Load required libraries
-local _G = _G
-local Game = Game
-local Obj_AI_Hero = Obj_AI_Hero
-local math = math
-local string = string
-
 -- Load DamageLib library
 local DamageLib = require "DamageLib"
 
